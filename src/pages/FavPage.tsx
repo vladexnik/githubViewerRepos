@@ -1,4 +1,3 @@
-import { useActions } from '../hooks/actions'
 import { useAppSelector } from '../hooks/redux'
 
 const FavPage = () => {
@@ -6,7 +5,7 @@ const FavPage = () => {
     const {favourites}=useAppSelector(state=> state.github)
 
     if(favourites.length=== 0){
-        return <p>No favourites.</p>
+        return <p>No favourites yet. You can fix it</p>
     }
 
     return (
