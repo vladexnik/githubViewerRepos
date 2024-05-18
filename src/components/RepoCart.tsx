@@ -5,10 +5,9 @@ import { IRepo } from '../models/models';
 
 const RepoCart = ({repo}: {repo: IRepo}) => {
 
-
     const {addFavourite, removeFavourite}=useActions()
     const {favourites}=useAppSelector(state=> state.github)
-    console.log(favourites);
+    // console.log(favourites);
 
     const [isFav, setIsFav]=useState(favourites.includes(repo.html_url));
 
@@ -24,9 +23,8 @@ const RepoCart = ({repo}: {repo: IRepo}) => {
         setIsFav(false);
     }
 
-
   return (
-    <div className='border py-3 px-5 rounded mb-2 hover:shadow-md cursor-pointer hover:bg-gray-100 transition-all'>
+    <div className='border-4 border-indigo-400 py-3 px-5 rounded mb-2 hover:shadow-md cursor-pointer hover:bg-green-100 transition-all'>
         <a href={repo.html_url}target='_blank'>
             <h2 className='text=lg font-bold'> 
                 {repo.full_name}

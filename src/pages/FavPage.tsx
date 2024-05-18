@@ -10,14 +10,12 @@ const FavPage = () => {
     }
 
     return (
-        <div >
-            <ul className='flex flex-col justify-center pt-10 h-screnen w-screen '>
+        <div className='content-center'>
+            <ul className='flex justify-center flex-col justify-center pt-10 mx-auto h-screnen w-screen'>
                 {favourites.map(item=>
-                    <div className='flex'>
-                        <li key={item} className='rounded-lg bg-blue-500 py-2 px-3 my-3 mx-2 text-center text-white  hover:shadow-lg hover:shadow-blue-500/40 hover:cursor-pointer'> 
+                        <li key={item} className='rounded-lg self-center text-black bg-green-200 py-2 px-9 my-3 w-fit min-w-96 text-center text-white hover:shadow-lg hover:shadow-blue-500/40 hover:cursor-pointer'> 
                             <a href={item} target='_blank'>{item}</a>
                         </li>
-                    </div>
                 )}
             </ul>
         </div>

@@ -4,12 +4,11 @@ interface GithubState{
     favourites: string[]
 }
 
-const LS_FAV_KEY='rfk';
+const FAVORITES_KEY='favorites';
 
 const initialState: GithubState={
-    favourites: JSON.parse(localStorage.getItem(LS_FAV_KEY) ?? '[]')
+    favourites: JSON.parse(localStorage.getItem(FAVORITES_KEY) ?? '[]')
 }
-
 
 export const githubSlice=createSlice({
     name: 'github',
@@ -17,11 +16,11 @@ export const githubSlice=createSlice({
     reducers:{
         addFavourite(state, action: PayloadAction<string>){
             state.favourites.push(action.payload);
-            localStorage.setItem(LS_FAV_KEY, JSON.stringify(state.favourites) )
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favourites) )
         },
         removeFavourite(state, action: PayloadAction<string>){
             state.favourites=state.favourites.filter(f=> f!== action.payload);
-            localStorage.setItem(LS_FAV_KEY, JSON.stringify(state.favourites) )
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favourites) )
         }
     }
 })

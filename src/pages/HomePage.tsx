@@ -15,6 +15,8 @@ const HomePage = () => {
 
   const [fetchRepos,{isLoading: areReposLoading, data: repos}]=useLazyGetUserReposQuery()
 
+
+
   useEffect(()=>{
     setDropdown(debounced.length>3 && users?.length! >0)
 
@@ -53,6 +55,9 @@ const HomePage = () => {
         }
         <div className='container'>
         {areReposLoading && <p className='text-center'>Repos are loading ...</p>}
+        {repos?.length=== 0 &&
+          <div>This user doesn't have public repositories. Try another, please</div>
+        }
         {repos?.map(repo=> <RepoCart repo={repo} key={repo.id}/>)}
         </div>
       </div>
