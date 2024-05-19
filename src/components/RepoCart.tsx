@@ -3,11 +3,10 @@ import { useActions } from '../hooks/actions';
 import { useAppSelector } from '../hooks/redux';
 import { IRepo } from '../models/models';
 
-const RepoCart = ({repo}: {repo: IRepo}) => {
+const RepoCart = ({repo}: {repo:IRepo}) => {
 
     const {addFavourite, removeFavourite}=useActions()
     const {favourites}=useAppSelector(state=> state.github)
-    // console.log(favourites);
 
     const [isFav, setIsFav]=useState(favourites.includes(repo.html_url));
 

@@ -19,8 +19,6 @@ const HomePage = () => {
 
   useEffect(()=>{
     setDropdown(debounced.length>3 && users?.length! >0)
-
-    console.log(debounced);
   }, [debounced, users])
 
   const clickHandler=(username: string)=>{
@@ -28,10 +26,9 @@ const HomePage = () => {
     setDropdown(false); 
   }
   
-  console.log(users);
   return (
     <div className='flex justify-center pt-10 mx-auto h-screnen w-screen'>
-      {isError && <p className='text-center text-red-600'>Somethin wrong!!!</p>}
+      {isError && <div className='block text-center text-red-600'>Somethin wrong! Maybe your internet was turned off. Reload the page.</div>}
       <div className='relative w-[560px]' >
         <input 
           type="text"
