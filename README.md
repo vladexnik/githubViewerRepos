@@ -9,7 +9,7 @@
 - [Creators](#creators)
 
 ## Deploy
-github-viewer22.netlify.app
+[github-viewer22.netlify.app](https://github-viewer22.netlify.app/)
 
 ## Technologies
 - TypeScript
